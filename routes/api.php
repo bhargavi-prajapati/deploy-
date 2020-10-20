@@ -17,9 +17,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/image','imageController@create');
+//Route::post('/shopimage','imageController@image1');
+
+
+//Route::get('/image','imageController@image');
 Route::get('/mech','mechanicController@fetchdata');
 //Route::get('/shop','shopController@fetchdata');
 
-Route::post('/service/','serviceController@create');
+Route::post('/service','serviceController@create');
 Route::post('/time','timeController@create');
 

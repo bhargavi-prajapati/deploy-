@@ -8,5 +8,5 @@ class time extends Model
 {
     public $timestamps = false;
     protected $table ='times';
-    protected $fillable =['open_time','close_time','weekday'];
+    protected $fillable =['weekday','open_time','close_time'];
 }

@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 Route::get('/mech/fetch/',['as'=>'fetchdata','uses'=>'mechanicController@fetchdata']);
 
+//Route::get('/image/fetch/',['as'=>'image','uses'=>'imageController@image']);
+
+
 //Route::get('/mechanicshop','mechanicController@datadisplay');
 
 //Route::get('/display',['uses' => 'project\companycontroller@insert']);

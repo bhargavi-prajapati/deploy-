@@ -10,10 +10,10 @@ class timeController extends Controller
     public function create(Request $request)
     {
     	$times =new time();
+    	$times->weekday = $request->input('weekday');
     	$times->open_time = $request->input('open_time');
-    	$times->close_time = $request->input('close_time');
 
-		$times->weekday = $request->input('weekday');
+		$times->close_time = $request->input('close_time');
 		$times->save();
 		return response()->json($times);
 

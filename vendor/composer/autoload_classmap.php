@@ -34,7 +34,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
-    'App\\images' => $baseDir . '/app/images.php',
+    'App\\image' => $baseDir . '/app/image.php',
     'App\\mechanic' => $baseDir . '/app/mechanic.php',
     'App\\model\\company' => $baseDir . '/app/model/company.php',
     'App\\service' => $baseDir . '/app/service.php',

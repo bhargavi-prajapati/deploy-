@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\mechanic;
-use App\images;
+use App\image;
 use App\time;
+use App\service;
 
 class mechanicController extends Controller
 {
@@ -21,8 +22,8 @@ class mechanicController extends Controller
     	$mechanics->state = $request->input('state');
     	$mechanics->service_id = $request->input('service_id ');
     	$mechanics->time_id = $request->input('time_id  ');
-        $mechanics->longitude = $request->input('longitude  ');
-        $mechanics->latitude = $request->input('latitude  ');
+        $mechanics->latitude= $request->input('latitude');
+        $mechanics->longitude = $request->input('longitude');
 
 
     	$mechanics->save();
@@ -30,17 +31,46 @@ class mechanicController extends Controller
     }
      public function fetchdata(Request $request)
  {
- 	//$mech = mechanic::all();
-	 	//$mech = mechanic::leftjoin('images as image','image.id','=','mechanics.image_id')
+ 	
 
-	 	//->leftjoin('services as service','service.id','=','mechanics.service_id')
-	 	//->leftjoin('times as time','time.id','=','mechanics.time_id')
-	 	//->where('mechanics.id','=',2)->get();
-	      //
-        //dd($mech);
-        $mech['mechanics'] = mechanic::all();
-		 return response(json_encode($mech)) ;
+
+        $mechanics=mechanic::leftjoin('services','services.id','=','mechanicshops.service_id')->leftjoin('images','images.id','=','mechanicshops.image_id')->leftjoin('times','times.id','=','mechanicshops.time_id')->get();
+           // dd( $mechanics);
+      // $mechanics=mechanic::all();
+        
+           /* $i=0;
+         foreach ($mechanics as $mechanic)
+          {
+            $image=image::find($mechanic->image_id);
+             $mechanic['img_1']=$image->img_1;
+             $mechanic['img_2']=$image->img_2;
+
+             $time=time::find($mechanic->time_id);
+          
+           $mechanic['open_time']=$time->open_time;
+             $mechanic['close_time']=$time->close_time;
+              $mechanic['weekday']=$time->weekday;
+            
+           $services=service::find($mechanic->service_id);
+           $mechanic['services']=$services->services;
+           $mechanic['description']=$services->description;
+            
+        
+             
+
+           
+
+         
+         }*/
+         return response(json_encode($mechanics));
+            
+
+        
 	}
 
-	
+
+
+
+
 }
+

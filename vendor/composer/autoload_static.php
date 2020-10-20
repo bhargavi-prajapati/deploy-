@@ -456,7 +456,7 @@ class ComposerStaticInitcff7ab7253fc9ab5b224e03774a57b98
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\images' => __DIR__ . '/../..' . '/app/images.php',
+        'App\\image' => __DIR__ . '/../..' . '/app/image.php',
         'App\\mechanic' => __DIR__ . '/../..' . '/app/mechanic.php',
         'App\\model\\company' => __DIR__ . '/../..' . '/app/model/company.php',
         'App\\service' => __DIR__ . '/../..' . '/app/service.php',
